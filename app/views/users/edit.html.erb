@@ -1,0 +1,29 @@
+<h1 class="text-center">Create User Profile </center> </h1>
+ 
+<%= form_for @user do |f| %>
+  <div class="form-group">
+  
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname, class: "form-control" %>
+  <br>
+
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname, class: "form-control" %>
+  <br>
+
+  <%= f.label :dateofbirth %>
+  <%= f.date_field :dateofbirth, class: "form-control" %>
+  <br>
+
+  <%= f.label :location %>
+  <%= f.collection_select :location_id, Location.all, :id, :name , {}, class: "form-control" %>
+  <br>
+
+  <%= f.label :company %>
+  <%= f.text_field :company, class: "form-control" %>
+  <br>
+
+
+  <%= f.submit "Update Profile", class: 'btn btn-success btn-lg btn-block' %>
+  </div>
+<% end %>
