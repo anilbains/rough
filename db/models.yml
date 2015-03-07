@@ -1,0 +1,17 @@
+User:
+  firstname: string
+  lastname: string
+  dateofbirth: date 
+  location_id: integer
+  company: string
+
+Group:
+  name: string
+  year: integer
+
+Member:
+  user_id: integer
+  group_id: integer
+
+Location:
+  name: string
