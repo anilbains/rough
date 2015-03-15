@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 0) do
 
   create_table "groups", force: true do |t|
-    t.string  "name"
-    t.integer "year"
+    t.string "name"
+    t.string "year"
   end
 
   create_table "locations", force: true do |t|
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.date    "dateofbirth"
     t.integer "location_id"
     t.string  "company"
+    t.string  "email"
+    t.string  "password_digest"
   end
 
   add_index "users", ["location_id"], name: "index_users_on_location_id"

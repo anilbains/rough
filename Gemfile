@@ -10,6 +10,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bcrypt'
 gem 'ez'
+gem 'paperclip'
 # gem 'ez' should not only be in development but in production to 
 
 #gem 'omdb'

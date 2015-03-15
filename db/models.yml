@@ -4,10 +4,12 @@ User:
   dateofbirth: date 
   location_id: integer
   company: string
+  email: string
+  password_digest: string
 
 Group:
   name: string
-  year: integer
+  year: string
 
 Member:
   user_id: integer
