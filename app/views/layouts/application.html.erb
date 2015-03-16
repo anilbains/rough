@@ -22,8 +22,17 @@
 
 </head>
 <body>
+
   <div class="container">
-  
+      <!-- Alerts and Notices -->
+    <% if notice %>
+      <div class="alert alert-success" role="alert"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger" role="alert"><%= alert %></div>
+    <% end %>
+
+
 
   <div class="navbar navbar-default" >
    
@@ -35,7 +44,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "AffinityGroups", users_path, class: "navbar-brand" %> 
+      <%= link_to "AffinityGroups", sessions_path, class: "navbar-brand" %> 
     </div>
 
     <div class="navbar-collapse collapse">
@@ -73,7 +82,7 @@
 
       <% else %>
           
-            <li ><a href="users/new">Sign Up</a></li> 
+            <li ><%= link_to "Sign Up", new_user_path %></li> 
             
             <li class="dropdown" id="signupdropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In <b class="caret"></b></a>

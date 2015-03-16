@@ -1,15 +1,24 @@
 <div class="row">
+  
   <div class="col-sm-4 col-sm-4 col-sm-4">
     <div class="thumbnail">
-        <%= link_to image_tag("#{@group.id}.jpg", width: "350px"), group_path(@group.id) %>
-
+        <%= link_to image_tag("groupphotos/#{@group.id}.jpg", width: "350px"), group_path(@group) %>
     </div><br>
-      
-    
-
-
-
   </div>
+
+  <h2><%= @group.name  + "registered members"%></h2>
+  <% @members.each do |member| %>
+    <div class="col-md-2" >
+      <div class="thumbnail" style="background-color:#5ac88e;">
+        <%= link_to image_tag("userphotos/#{member.user.id}.jpg", style: "width:150px", style: "height:100px"), user_path(member.user.id) %>
+        <div class="caption">
+          <%= link_to member.user.firstname + " " + member.user.lastname , user_path(member.user.id) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+
 
 
 </div>

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
-  #before_action :require_user
+  before_action :require_user
 
   def current_user
     User.find_by(id: session["user_id"])
@@ -11,7 +11,8 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if current_user.nil?
-      redirect_to new_session_path
+      redirect_to new_session_path, alert: "Please login for further access"
+
     end
   end
 

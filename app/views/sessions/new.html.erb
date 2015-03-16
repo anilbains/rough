@@ -1,13 +1,11 @@
-<body>
-  <div class="container">
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
     <%= form_tag sessions_path do %>
-      <h1>Affinity</h1>
       <h2 >Please Sign In</h2>
       <%= text_field_tag :email, "", class: "form-control", placeholder: "Email Address" %>
       <%= password_field_tag :password, "", class: "form-control", placeholder: "Password" %>
       <%= button_tag "Sign In", class: "btn btn-lg btn-primary btn-block" %>
     <% end %>
   </div>
-</body>
-
+</div>
 

@@ -1,29 +1,43 @@
 <h1 class="text-center">Create User Profile </center> </h1>
- 
-<%= form_for @user do |f| %>
-  <div class="form-group">
-  
-  <%= f.label :firstname %>
-  <%= f.text_field :firstname, class: "form-control" %>
-  <br>
+ <div class="row">
+  <div class=" col-sm-4 col-sm-offset-4 ">
+    <%= form_for @user, :html => {:multipart => true} do |f| %>
+      <div class="form-group">
+      
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname, class: "form-control" %>
+      <br>
 
-  <%= f.label :lastname %>
-  <%= f.text_field :lastname, class: "form-control" %>
-  <br>
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname, class: "form-control" %>
+      <br>
 
-  <%= f.label :dateofbirth %>
-  <%= f.date_field :dateofbirth, class: "form-control" %>
-  <br>
+      <%= f.label :dateofbirth %>
+      <%= f.date_field :dateofbirth, class: "form-control" %>
+      <br>
 
-  <%= f.label :location %>
-  <%= f.collection_select :location_id, Location.all, :id, :name , {}, class: "form-control" %>
-  <br>
+      <%= f.label :location %>
+      <%= f.collection_select :location_id, Location.all, :id, :name , {}, class: "form-control" %>
+      <br>
 
-  <%= f.label :company %>
-  <%= f.text_field :company, class: "form-control" %>
-  <br>
+      <%= f.label :company %>
+      <%= f.text_field :company, class: "form-control" %>
+      <br>
+
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "form-control" %>
+      <br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "form-control" %>
+      <br>
+
+      <%= f.file_field :userphoto %>
 
 
-  <%= f.submit "Create Profile", class: 'btn btn-success btn-lg btn-block' %>
+      <%= f.submit "Create Profile", class: 'btn btn-success btn-lg btn-block' %>
+      </div>
+
   </div>
+</div>
 <% end %>
